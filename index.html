@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>React Shopping Cart</title>
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="src/images/ios-desktop.png">
+
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="src/css/deep-purple.min.css">
+    <link rel="stylesheet" href="src/css/index.css">
+    <script src="src/js/material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+    <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+            <h3>Order Summary</h3>
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+            <a href="#overview" class="mdl-layout__tab is-active">Overview</a>
+            <a href="#technology" class="mdl-layout__tab" onclick="loadtech()">Technology</a>
+            <a href="http://prateekagrawal89760.000webhostapp.com" target="_blank" class="mdl-layout__tab">Developer</a>
+
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent"
+                    id="add">
+                <i class="material-icons" role="presentation">add</i>
+                <span class="visuallyhidden">Add</span>
+
+            </button>
+
+            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="add">
+                <div id="resetDiv"></div>
+            </ul>
+        </div>
+    </header>
+
+    <main class="mdl-layout__content">
+
+        <div class="mdl-layout__tab-panel is-active" id="overview">
+
+            <section class=" mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="section-left">
+
+                <div class="mdl-card mdl-cell  mdl-cell--7-col-tablet mdl-cell--3-col-phone mdl-cell--2-col-desktop"
+                     style="background: #eee">
+
+                </div>
+                <div class="mdl-card mdl-cell  mdl-cell--1-col-tablet mdl-cell--1-col-phone mdl-cell--1-col-desktop"
+                     style="background: #f5f5f5">
+
+                </div>
+                <section
+                        class="mdl-card mdl-cell mdl-cell--12-col-tablet mdl-cell--9-col-phone mdl-cell--9-col-desktop">
+
+                    <div class="mdl-card__actions ">
+                        <p style="color: rgb(255,64,129)">Items (<span class="total-items"></span>)<span
+                                style="float: right;margin-right: 3%;">Price</span><span
+                                style="float: right;margin-right: 15%">Qty</span></p>
+                    </div>
+
+                    <div id="app"></div>
+                    <br>
+
+                </section>
+
+                <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+
+                </section>
+            </section>
+            <section class=" mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="section-right">
+
+                <section
+                        class="mdl-card mdl-cell mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-cell--12-col-desktop">
+                    <br>
+                    <p id="total-paragraph">Total</p>
+                    <p><span style="margin-left: 5%">Items (<span class="total-items"></span>)  :</span><span
+                            style="float: right;margin-right: 15%;color: black">$ <span id="total-price">0</span></span>
+                    </p>
+                    <br>
+                    <p style="margin-bottom: 0"><span style="margin-left: 5%">Discount<span> </span>  :</span><span
+                            style="float: right;margin-right: 15%;color: black">- $ <span id="discount">0</span></span>
+                    </p>
+                    <p style="margin-top: 0"><span style="margin-left: 5%">Type Discount<span> </span>  :</span><span
+                            style="float: right;margin-right: 15%;color: black">- $ <span
+                            id="type-discount">0</span></span>
+                    </p>
+
+                    <strong style="margin-bottom: 0;margin-top: 20px;background: #eee;padding-top: 20px;padding-bottom: 20px;">
+                        <span style="margin-left: 5%">Order Total<span> </span>  :</span><span
+                            style="float: right;margin-right: 15%;color: black"> $ <span
+                            id="order-total">0</span></span>
+                    </strong>
+
+                </section>
+            </section>
+
+        </div>
+
+        <dialog class="mdl-dialog">
+            <div class="mdl-dialog__content">
+                <p>
+                    Item has been deleted
+                </p>
+            </div>
+            <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+                <button type="button" class="mdl-button close">Close</button>
+            </div>
+        </dialog>
+        <div class="mdl-layout__tab-panel" id="technology">
+            <iframe src="/README.html" height="500px"></iframe>
+        </div>
+        <div class="mdl-layout__tab-panel" id="developer"></div>
+    </main>
+    <footer style="padding-top: 9%;background: rgb(255,64,129);bottom: 0!important;margin-top: 3%">
+        <div style="background: rgb(255,64,129);padding: 0;margin: 0">
+            <div style="text-align: center;margin-top: 0;margin-bottom: 5%">
+                <strong id="footer-project" style="color: #ccc;font-size: 800%;letter-spacing: 4px">Project</strong>
+            </div>
+        </div>
+        <div style="background: #3D0B96;padding-bottom: 1%;padding-top: 1%;">
+            <div style="color: white;text-align: center">
+                <strong style="color: white;text-align: center">&copy;Copyright 2017. All Right reserved</strong>
+            </div>
+        </div>
+    </footer>
+
+</div>
+<script src="index.js"></script>
+</body>
+
+<script>
+    $('.show-modal').click(function () {
+        let id = '';
+        for (let i = 5; i < this.id.length; i++) {
+            id += this.id[i];
+        }
+
+        $('.total-items').html($('.total-items').html() - 1);
+
+        let quantity = parseInt($('#input' + id).val());
+        let price = document.getElementById('price' + id).childNodes;
+        price = parseInt(price[1].innerHTML);
+        $('#total-price').html(parseInt($('#total-price').html()) - price * quantity);
+
+        $.getJSON("/data/data.json", function (result) {
+            $.each(result, function (i, item) {
+                if (item.id == id) {
+                    $('#discount').html(parseInt($('#discount').html()) - item.discount);
+                    if (item.type === 'fiction') {
+                        $('#type-discount').html(parseInt($('#type-discount').html()) - parseInt(item.price * (15 / 100)));
+                    }
+                    return;
+                }
+            });
+            $('#order-total').html(
+                parseInt($('#total-price').html()) -
+                parseInt($('#type-discount').html()) -
+                parseInt($('#discount').html())
+            );
+        });
+
+        $('#tr' + id).remove();
+        document.querySelector('dialog').showModal();
+    });
+</script>
+
+<script>
+    $('.close').click(function () {
+        document.querySelector('dialog').close();
+    });
+</script>
+
+<script>
+    $('.plus').click(function () {
+        let id = '';
+        for (let i = 4; i < this.id.length; i++) {
+            id += this.id[i];
+        }
+        $('#input' + id).val(parseInt($('#input' + id).val()) + 1);
+
+        let price = document.getElementById('price' + id).childNodes;
+        price = parseInt(price[1].innerHTML);
+        $('#total-price').html(parseInt($('#total-price').html()) + price);
+
+        $.getJSON("/data/data.json", function (result) {
+            $.each(result, function (i, item) {
+                if (item.id == id) {
+                    $('#discount').html(parseInt($('#discount').html()) + item.discount);
+                    if (item.type === 'fiction') {
+                        $('#type-discount').html(parseInt($('#type-discount').html()) + parseInt(item.price * (15 / 100)));
+                    }
+                    return;
+                }
+            });
+            $('#order-total').html(
+                parseInt($('#total-price').html()) -
+                parseInt($('#type-discount').html()) -
+                parseInt($('#discount').html())
+            );
+        });
+
+    });
+</script>
+
+<script>
+    $('.mins').click(function () {
+        let id = '';
+        for (let i = 5; i < this.id.length; i++) {
+            id += this.id[i];
+        }
+        if (parseInt($('#input' + id).val()) > 0) {
+            $('#input' + id).val(parseInt($('#input' + id).val()) - 1);
+            let price = document.getElementById('price' + id).childNodes;
+            price = parseInt(price[1].innerHTML);
+            $('#total-price').html(parseInt($('#total-price').html()) - price);
+
+            $.getJSON("/data/data.json", function (result) {
+                $.each(result, function (i, item) {
+                    if (item.id == id) {
+                        $('#discount').html(parseInt($('#discount').html()) - item.discount);
+                        if (item.type === 'fiction') {
+                            $('#type-discount').html(parseInt($('#type-discount').html()) - parseInt(item.price * (15 / 100)));
+                        }
+                        return;
+                    }
+                });
+                $('#order-total').html(
+                    parseInt($('#total-price').html()) -
+                    parseInt($('#type-discount').html()) -
+                    parseInt($('#discount').html())
+                );
+            });
+
+        }
+    });
+</script>
+
+<script>
+    function resetItems() {
+
+        $.getJSON("/data/data.json", function (result) {
+            $.each(result, function (i, item) {
+                if (!($('#price' + item.id).length > 0)) {
+
+                    let tr, td, span, br, img, input;
+
+                    tr = document.createElement("tr");
+                    $(tr).attr('id', 'tr' + item.id);
+
+                    td = document.createElement("td");
+                    $(td).attr('id', 'td' + item.id);
+                    $(td).attr('class', 'name mdl-shadow--2dp');
+
+                    span = document.createElement("span");
+                    $(span).attr('class', 'img-span');
+                    img = document.createElement("img");
+                    $(img).attr('src', item.img_url);
+                    $(img).attr('class', 'bookcover');
+                    span.appendChild(img);
+                    td.appendChild(span);
+
+                    span = document.createElement("span");
+                    $(span).attr('class', 'item-name');
+                    span.appendChild(document.createTextNode(item.name));
+                    td.appendChild(span);
+
+                    span = document.createElement("span");
+                    $(span).attr('class', 'cross-button show-modal');
+                    $(span).attr('id', 'cross' + item.id);
+                    span.appendChild(document.createTextNode('X'));
+                    td.appendChild(span);
+
+                    tr.appendChild(td);
+
+                    td = document.createElement("td");
+                    $(td).attr('id', 'price' + item.id);
+                    $(td).attr('class', 'price');
+                    span = document.createElement("span");
+                    span.appendChild(document.createTextNode('$' + item.price));
+                    td.appendChild(span);
+                    tr.appendChild(td);
+
+                    td = document.createElement("td");
+                    $(td).attr('class', 'qty');
+
+                    span = document.createElement("span");
+                    $(span).attr('class', 'plus-minus plus');
+                    $(span).attr('id', 'plus' + item.id);
+                    span.appendChild(document.createTextNode('+ '));
+                    td.appendChild(span);
+
+                    span = document.createElement("span");
+
+                    input = document.createElement('input');
+                    $(input).attr('class', 'qty-input mdl-shadow--2dp');
+                    $(input).attr('id', 'input' + item.id);
+                    $(input).attr('value', parseInt(1));
+                    span.appendChild(input);
+
+                    td.appendChild(span);
+
+                    span = document.createElement("span");
+                    $(span).attr('class', 'plus-minus plus');
+                    $(span).attr('id', 'plus' + item.id);
+                    span.appendChild(document.createTextNode(' -'));
+                    td.appendChild(span);
+
+                    tr.appendChild(td);
+
+//                    br = document.createElement("br");
+//                    tr.appendChild(br);
+//                    tr.appendChild(br);
+//                    tr.appendChild(br);
+
+                    $('tbody').attr('id', 'tbody');
+                    document.getElementById('tbody').appendChild(tr);
+                    $('.total-items').html(+$('.total-items').html() + 1);
+                }
+            });
+        });
+        $('.qty-input').val('1');
+
+        $.getJSON("/data/data.json", function (result) {
+            $('#total-price').html(0);
+            $('#discount').html(0);
+            $('#type-discount').html(0);
+            $.each(result, function (i, item) {
+                $('#total-price').html(parseInt($('#total-price').html()) + item.price);
+                $('#discount').html(parseInt($('#discount').html()) + parseInt(item.discount));
+                if (item.type === 'fiction') {
+                    $('#type-discount').html(parseInt($('#type-discount').html()) + parseInt(item.price * (15 / 100)));
+                }
+            });
+            $('#order-total').html(
+                parseInt($('#total-price').html()) -
+                parseInt($('#type-discount').html()) -
+                parseInt($('#discount').html())
+            );
+        });
+    }
+</script>
+
+<script>
+    let i = 1;
+    $.getJSON("/data/data.json", function (result) {
+        $.each(result, function (i, item) {
+            if ($('#price' + item.id).length > 0) {
+                $('.total-items').html(++i);
+            }
+        });
+    });
+</script>
+<script>
+    $.getJSON("/data/data.json", function (result) {
+        $.each(result, function (i, item) {
+            $('#total-price').html(parseInt($('#total-price').html()) + item.price);
+            $('#discount').html(parseInt($('#discount').html()) + item.discount);
+            if (item.type === 'fiction') {
+                $('#type-discount').html(parseInt($('#type-discount').html()) + parseInt(item.price * (15 / 100)));
+            }
+        });
+        $('#order-total').html(
+            parseInt($('#total-price').html()) -
+            parseInt($('#type-discount').html()) -
+            parseInt($('#discount').html())
+        );
+    });
+
+</script>
+</html>
