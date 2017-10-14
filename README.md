@@ -2,12 +2,10 @@
 ##############################################################################################################
 #
 # This File was made by "PRATEEK AGRAWAL"
-# This project was made by PRATEEK AGRAWAL to submit in 'HACKEREARTH FRONTEND HIRING CHELLANGE (4 days)' on sun, oct 1,2017
+# This project was made by PRATEEK AGRAWAL to submit in 'HACKEREARTH FRONTEND HIRING CHELLANGE' on sun, oct 1,2017
 #
 ##############################################################################################################
 ##############################################################################################################
-
-# REACT. JS MADE BY FACEBOOK
 
 # REACT SHOPPING CART
 
@@ -36,8 +34,6 @@
     npm install babel-preset-react
     npm install babel-preset-es2015
 
-
-# use Email ''prateek.agrawal_me15@gmail.com'' to login on HACKEREARTH
 
 # Folders and files specification
 
