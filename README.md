@@ -1,13 +1,5 @@
-##############################################################################################################
-##############################################################################################################
-#
-# This project was made for'HACKEREARTH FRONTEND HIRING CHELLANGE' on sun, oct 1,2017
-#
-##############################################################################################################
-##############################################################################################################
-
 # REACT SHOPPING CART
-
+This project was made for'HACKEREARTH FRONTEND HIRING CHELLANGE' on sun, oct 1,2017
 # To start the server open Terminal in root directory of project and type :
 
     npm start
